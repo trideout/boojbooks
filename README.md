@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/trideout/boojbooks.svg?branch=master)](https://travis-ci.org/trideout/boojbooks)
 ## Booj Books
 
 API developed using TDD using Laravel
