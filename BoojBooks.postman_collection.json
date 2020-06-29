@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "033b48e2-971a-4962-bb2b-89df46f38527",
+		"name": "BoojBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://local.boojbooks.com/api/getBooks",
+					"protocol": "http",
+					"host": [
+						"local",
+						"boojbooks",
+						"com"
+					],
+					"path": [
+						"api",
+						"getBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "isbn",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://local.boojbooks.com/api/getBooks",
+					"protocol": "http",
+					"host": [
+						"local",
+						"boojbooks",
+						"com"
+					],
+					"path": [
+						"api",
+						"getBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://local.boojbooks.com/api/removeBook?book_id=",
+					"protocol": "http",
+					"host": [
+						"local",
+						"boojbooks",
+						"com"
+					],
+					"path": [
+						"api",
+						"removeBook"
+					],
+					"query": [
+						{
+							"key": "book_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort Books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "books[]",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://local.boojbooks.com/api/getBooks?",
+					"protocol": "http",
+					"host": [
+						"local",
+						"boojbooks",
+						"com"
+					],
+					"path": [
+						"api",
+						"getBooks"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
