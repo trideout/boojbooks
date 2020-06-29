@@ -15,7 +15,7 @@ class ApiTest extends \Tests\TestCase {
      */
     public function testAddBook($title, $author, $description, $isbn){
         //Add all books
-        $response = $this->postJson('http://local.boojbooks.com/api/addBook', [
+        $response = $this->postJson(config('app.url') . '/api/addBook', [
             'title' => $title,
             'author' => $author,
             'description' => $description,
@@ -43,7 +43,7 @@ class ApiTest extends \Tests\TestCase {
             'isbn' => '00000001',
         ]);
 
-        $response = $this->postJson('http://local.boojbooks.com/api/removeBook', [
+        $response = $this->postJson(config('app.url') . '/api/removeBook', [
             'book_id' => $book->id,
         ]);
 
@@ -54,7 +54,7 @@ class ApiTest extends \Tests\TestCase {
 
     public function testGetBooks(){
         $this->insertTestBooks();
-        $response = $this->postJson('http://local.boojbooks.com/api/getBooks');
+        $response = $this->postJson(config('app.url') . '/api/getBooks');
         $response->assertStatus(200);
         $data = json_decode($response->content(), true)[0];
         $this->assertArrayHasKey('id', $data);
@@ -69,7 +69,7 @@ class ApiTest extends \Tests\TestCase {
         $books = \App\Book::pluck('id')->toArray();
         shuffle($books);
 
-        $response = $this->postJson('http://local.bookbooks.com/api/sortBooks', ['books' => $books]);
+        $response = $this->postJson(config('app.url') . '/api/sortBooks', ['books' => $books]);
         $response->assertStatus(200)
             ->assertJson(['success' => true]);
 
@@ -80,7 +80,7 @@ class ApiTest extends \Tests\TestCase {
     }
 
     public function testValidationFails(){
-        $response = $this->postJson('http://local.boojbooks.com/api/addBook', [
+        $response = $this->postJson(config('app.url') . '/api/addBook', [
             'author' => 'sample author',
             'isbn' => '00000000',
         ]);
